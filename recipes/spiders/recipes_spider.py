@@ -4,8 +4,8 @@ from scrapy import Spider, Request
 class RecipesSpider(Spider):
     name = "recipes_spider"
     allowed_urls = ["https://www.simplyrecipes.com/"]
+    #start_urls = ["https://www.simplyrecipes.com/recipes/course/dinner/", "https://www.simplyrecipes.com/recipes/course/stew/", "https://www.simplyrecipes.com/recipes/course/soup/"]
     start_urls = ["https://www.simplyrecipes.com/recipes/course/dinner/"]
-
     def parse(self, response):
         num_pages = int(response.xpath('//a[@class="rpg-page-numbers"]/text()').extract()[-1])
         #num_pages = 2
