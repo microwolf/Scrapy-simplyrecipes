@@ -1,5 +1,6 @@
 from recipes.items import RecipesItem
 from scrapy import Spider, Request
+from scrapy.crawler import CrawlerProcess
 
 class RecipesSpider(Spider):
     name = "recipes_spider"

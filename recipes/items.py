@@ -27,6 +27,7 @@ class RecipesItem(scrapy.Item):
 
     servings = scrapy.Field()
     ingredients = scrapy.Field()
+    cook_type = scrapy.Field()
     
     
 
