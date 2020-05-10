@@ -6,9 +6,10 @@ class RecipesSpider(Spider):
     name = "recipes_spider"
     allowed_urls = ["https://www.simplyrecipes.com/"]
     #start_urls = ["https://www.simplyrecipes.com/recipes/course/dinner/", "https://www.simplyrecipes.com/recipes/course/stew/", "https://www.simplyrecipes.com/recipes/course/soup/"]
-    start_urls = ["https://www.simplyrecipes.com/recipes/course/dinner/"]
+    start_urls = ["https://www.simplyrecipes.com/recipes/main-ingredient/"]
     
     def parse(self, response):
+        main = ['beef', 'chicken', 'vegetables', ]
         num_pages = int(response.xpath('//a[@class="rpg-page-numbers"]/text()').extract()[-1])
         #num_pages = 2
         #page_lst = [f'https://www.simplyrecipes.com/recipes/course/dinner/page/{i+1}/' for i in range(num_pages)]
@@ -67,3 +68,5 @@ class RecipesSpider(Spider):
         item['ingredients'] = ingredients
 
         yield item
+
+class 

@@ -10,8 +10,8 @@ class RecipesSpider(Spider):
     def parse(self, response):
         num_pages = int(response.xpath('//a[@class="rpg-page-numbers"]/text()').extract()[-1])
         #num_pages = 2
-        #page_lst = [f'https://www.simplyrecipes.com/recipes/course/dinner/page/{i+1}/' for i in range(num_pages)]
-        page_lst = [f'https://www.simplyrecipes.com/recipes/course/soup/page/{i+1}/' for i in range(num_pages)]
+        page_lst = [f'https://www.simplyrecipes.com/recipes/course/dinner/page/{i+1}/' for i in range(num_pages)]
+        #page_lst = [f'https://www.simplyrecipes.com/recipes/course/soup/page/{i+1}/' for i in range(num_pages)]
 
         for page in page_lst:
             yield Request(url = page, callback = self.parse_recipe_lst_page)
